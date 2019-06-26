@@ -8,7 +8,7 @@ static uint8_t buffer[1000];
 // Memory system instance
 MEM32_SYSTEM mem;             
 
-// setup the memory system to allocate the buffer with requested alignment ... eg 2
+// setup the memory system to allocate the buffer with requested alignment
 mem32_sys_init(&mem, (uint32_t)&buffer[0], (uint32_t)&buffer[1000], 2);
 
 // allocate 256 bytes from buffer it will be 2 byte aligned
