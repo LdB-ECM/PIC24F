@@ -1,2 +1,1 @@
-# PIC24F
-# PIC24F
+# PIC24F public code
