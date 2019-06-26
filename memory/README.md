@@ -1,10 +1,15 @@
 Simple contained heap manager which does alignment
 
-static uint8_t buffer[1000];  // create some buffer to allocate data from
-MEM32_SYSTEM mem;             // Memory system instance
+#include "memory.h"
 
-// setup the memory system to allocate the buffer with requested alignment
-mem32_sys_init(&mem, (uint32_t)& buffer[0], (uint32_t)&buffer[1000], 2);
+// create some buffer to allocate data from
+static uint8_t buffer[1000]; 
+
+// Memory system instance
+MEM32_SYSTEM mem;             
+
+// setup the memory system to allocate the buffer with requested alignment ... eg 2
+mem32_sys_init(&mem, (uint32_t)&buffer[0], (uint32_t)&buffer[1000], 2);
 
 // allocate 256 bytes from buffer it will be 2 byte aligned
 void* p = mem32_sys_malloc(&mem, 256);
